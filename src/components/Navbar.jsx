@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Mail, Home as HomeIcon } from 'lucide-react';
+import { ShieldCheck, Mail, Home as HomeIcon, CircleUserIcon } from 'lucide-react';
 
 const Navbar = () => {
   return (
@@ -27,6 +27,11 @@ const Navbar = () => {
         <li>
           <Link to='/contact' className='hover:text-red-400 transition-colors duration-300 flex items-center gap-2'>
             <Mail size={20} /> Contact
+          </Link>
+        </li>
+        <li>
+          <Link to='/profile' className='hover:text-red-400 transition-colors duration-300 flex items-center gap-2'>
+            <CircleUserIcon size={20} /> Profile
           </Link>
         </li>
       </ul>
