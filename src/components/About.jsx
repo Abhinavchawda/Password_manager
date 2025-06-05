@@ -2,7 +2,7 @@ import { ShieldCheck, Key, Lock, Zap } from 'lucide-react';
 
 const About = () => {
   return (
-    <section className='min-h-[100vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4 font-inter'>
+    <section className='min-h-[100vh] flex items-center justify-center py-16 px-4 font-inter'>
       <div className='container mx-auto max-w-4xl bg-white rounded-2xl shadow-xl p-8 md:p-12'>
         <h2 className='text-5xl font-extrabold text-gray-900 text-center mb-12 leading-tight'>
           About <span className='text-red-600'>PassOP</span>

@@ -35,7 +35,7 @@ const Home = () => {
     return (
         <div className="min-h-[calc(100vh-12rem)] flex flex-col items-center justify-center p-8 font-inter">
             <div className="text-center">
-                <h2 className="text-6xl font-extrabold text-gray-800 mb-4 drop-shadow-lg leading-tight">
+                <h2 className="text-4xl md:text-6xl text-wrap font-extrabold text-gray-800 mb-4 drop-shadow-lg leading-tight">
                     Welcome to <span className="text-red-600">&lt;</span>Pass<span className="text-red-600">OP/&gt;</span>
                 </h2>
                 <p className="text-2xl text-gray-600">
@@ -49,7 +49,7 @@ const Home = () => {
                 </Link>
             </div>
 
-            <div>
+            <div className='w-full max-w-2xl my-8'>
                 {notes.map((note) => (
                     <Note key={note.$id} data={note}
                         onDelete={() => {

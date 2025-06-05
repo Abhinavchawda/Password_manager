@@ -1,29 +1,60 @@
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section className='min-h-[100vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4 font-inter'>
-      <div className='container mx-auto max-w-2xl bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center'>
-        <h2 className='text-5xl font-extrabold text-gray-900 mb-8 leading-tight'>
-          Get in Touch
-        </h2>
-        <p className='text-xl text-gray-700 leading-relaxed mb-8'>
-          We'd love to hear from you! Feel free to reach out to the developer, <b className='text-teal-600'>Abhinav Chawda</b>, for any inquiries or feedback.
-        </p>
+    <section className="bg-gray-50 py-10 px-4 sm:px-6 lg:px-8 font-sans">
+      <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-10 md:p-16">
+        <div className="text-center">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight animate-fade-in-up">
+            Let’s Connect & Build Something Great
+          </h2>
+          <p className="mt-6 text-lg sm:text-xl text-gray-600 animate-fade-in-up delay-100">
+            Whether you have a project idea, a question, or just want to say hello, feel free to reach out to 
+            <span className="text-blue-600 font-semibold"> Abhinav Chawda</span>. We’d love to hear from you.
+          </p>
+        </div>
 
-        <div className='flex flex-col items-center gap-6'>
+        <div className="space-y-8">
           {/* Email */}
-          <div className='flex items-center text-gray-800 text-xl md:text-2xl bg-gray-50 p-4 rounded-xl shadow-sm w-full max-w-sm justify-center'>
-            <Mail className='text-blue-500 mr-3' size={28} />
-            <a href='mailto:abhinav.chawda@example.com' className='hover:underline text-blue-700'>
+          <div className="flex items-center text-gray-800 group animate-fade-in-up delay-200">
+            <Mail className="text-blue-600 group-hover:text-blue-700 transition-colors duration-300 mr-4" size={28} />
+            <a
+              href="mailto:abhinav.chawda@example.com"
+              className="text-lg sm:text-xl font-medium text-blue-700 hover:underline hover:text-blue-800 transition"
+            >
               abhinavchawda23@gmail.com
             </a>
           </div>
+
           {/* Phone */}
-          <div className='flex items-center text-gray-800 text-xl md:text-2xl bg-gray-50 p-4 rounded-xl shadow-sm w-full max-w-sm justify-center'>
-            <Phone className='text-green-500 mr-3' size={28} />
-            <a href='tel:+91 9516510552' className='hover:underline text-green-700'>
+          <div className="flex items-center text-gray-800 group animate-fade-in-up delay-300">
+            <Phone className="text-green-600 group-hover:text-green-700 transition-colors duration-300 mr-4" size={28} />
+            <a
+              href="tel:+91 9516510552"
+              className="text-lg sm:text-xl font-medium text-green-700 hover:underline hover:text-green-800 transition"
+            >
               +91 9516510552
+            </a>
+          </div>
+
+          {/* Location */}
+          <div className="flex items-center text-gray-800 group animate-fade-in-up delay-400">
+            <MapPin className="text-purple-600 group-hover:text-purple-700 transition-colors duration-300 mr-4" size={28} />
+            <span className="text-lg sm:text-xl font-medium text-gray-700">
+              Ujjain, Madhya Pradesh, India
+            </span>
+          </div>
+
+          {/* Website */}
+          <div className="flex items-center text-gray-800 group animate-fade-in-up delay-500">
+            <Globe className="text-orange-600 group-hover:text-orange-700 transition-colors duration-300 mr-4" size={28} />
+            <a
+              href="https://abhinav-silk.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg sm:text-xl font-medium text-orange-700 hover:underline hover:text-orange-800 transition"
+            >
+              https://abhinav-silk.vercel.app/
             </a>
           </div>
         </div>

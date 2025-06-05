@@ -11,7 +11,7 @@ const Note = ({ data, onDelete, onEdit }) => {
     const maskedPassword = data.password ? '•'.repeat(data.password.length) : 'N/A';
 
     return (
-        <div className="bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 mx-auto w-full border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-600 my-5 min-w-[350px]">
+        <div className="bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 mx-auto w-full border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-600 my-5 min-w-[250px]">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 {/* Site Name and User ID */}
                 <div className="flex-1 min-w-0">
