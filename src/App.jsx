@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import About from './components/About';
-import Contact from './components/Contact';
-import Home from './components/Home';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import HomePage from './pages/HomePage';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import LoginPage from './pages/LoginPage';
 import Layout from './components/Layout';
-import Profile from './components/Profile';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   return (
@@ -19,17 +19,17 @@ function App() {
                 <Route path="/" element={
                   <ProtectedRoute>
                     <Layout>
-                      <Home />
+                      <HomePage />
                     </Layout>
                   </ProtectedRoute>
                 } />
                 <Route path="/login" element={<LoginPage />} />
-                <Route path="/about" element={<Layout><About /></Layout>} />
-                <Route path="/contact" element={<Layout><Contact /></Layout>} />
+                <Route path="/about" element={<Layout><AboutPage /></Layout>} />
+                <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
                 <Route path="/profile" element={
                   <ProtectedRoute>
                     <Layout>
-                      <Profile />
+                      <ProfilePage />
                     </Layout>
                   </ProtectedRoute>
                 } />

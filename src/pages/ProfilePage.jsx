@@ -4,7 +4,7 @@ import { account } from '../appwrite/config';
 import { useNavigate } from 'react-router-dom';
 import { Calendar, LogOutIcon, Mail, User } from 'lucide-react';
 
-const Profile = () => {
+const ProfilePage = () => {
     const navigate = useNavigate();
 
     const [loading, setLoading] = useState(true);
@@ -24,7 +24,7 @@ const Profile = () => {
                 setProfileData(user);
             } catch (error) {
                 console.error("Error fetching profile data:", error);
-                setProfileData(null); 
+                setProfileData(null);
             } finally {
                 setLoading(false);
             }
@@ -120,4 +120,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default ProfilePage;
