@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Eye, EyeOff, Trash2, Pencil, Link, User } from 'lucide-react';
+import { Eye, EyeOff, Trash2, Pencil, Link, User, CopyIcon } from 'lucide-react';
 
 const Note = ({ data, onDelete, onEdit }) => {
     const [showPassword, setShowPassword] = useState(false);
@@ -44,19 +44,39 @@ const Note = ({ data, onDelete, onEdit }) => {
                     </button>
                 </div>
 
-                {/* Action Buttons (Edit & Delete) */}
+                {/* Action Buttons (Copy, Edit & Delete ) */}
                 <div className="flex gap-2 flex-shrink-0">
                     <button
+                        onClick={() => navigator.clipboard.writeText(data.password)
+                            .then(() => {
+                                window.alert('Password copied to clipboard!');
+                            })
+                            .catch((err) => {
+                                console.error('Failed to copy password:', err);
+                                alert('Failed to copy password. Please try again.');
+                            })
+                        }
+                        className="p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-lg transition duration-200 shadow-md flex items-center justify-center transform hover:scale-105"
+                        aria-label="Copy Password"
+                        type="button"
+                    >
+                        <CopyIcon size={18} />
+                    </button>
+                    <button
                         onClick={() => onEdit(data)}
-                        className="p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-200 shadow-md flex items-center justify-center transform hover:scale-105"
+                        title="Edit Entry"
+                        className="p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300 shadow-sm flex items-center justify-center transform hover:scale-105"
                         aria-label="Edit"
                         type="button"
                     >
                         <Pencil size={18} />
                     </button>
                     <button
-                        onClick={() => onDelete(data.$id)}
-                        className="p-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition duration-200 shadow-md flex items-center justify-center transform hover:scale-105"
+                        onClick={() =>
+                            confirm('Are you sure you want to delete this entry?') && onDelete(data.$id)
+                        }
+                        title="Delete Entry"
+                        className="p-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition duration-300 shadow-sm flex items-center justify-center transform hover:scale-105"
                         aria-label="Delete"
                         type="button"
                     >
