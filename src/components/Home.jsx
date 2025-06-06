@@ -88,6 +88,7 @@ const Home = () => {
                                 setEditingNote(null); // Clear the editing state after updating
                             });
                     }}
+                    onCancelEdit={() => setEditingNote(null)} // Clear the editing state when canceling
                 />
             </div>
         </div>
